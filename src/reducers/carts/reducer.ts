@@ -57,9 +57,7 @@ export function cartsReducer(state: CartsState, action: any) {
       })
     case ActionTypes.CONFIRM_ITEMS:
       return produce(state, (draft) => {
-        if (!draft.requests) draft.requests = []
-
-        draft.requests.push(action.payload.request)
+        draft.requests = [action.payload.request]
       })
     default:
       return state
